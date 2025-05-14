@@ -26,7 +26,7 @@ export const addNewAuctionItem = catchAsyncErrors(async (req, res, next) => {
     startingBid,
     startTime,
     endTime,
-  } = req.body || {};
+  } = req.body;
   if (
     !title ||
     !description ||
@@ -59,10 +59,7 @@ export const addNewAuctionItem = catchAsyncErrors(async (req, res, next) => {
     endTime: { $gt: Date.now() },
   });
   if (alreadyOneAuctionActive.length > 0) {
-    return next(new ErrorHandler("You already have one active auction.", 400
-
-    )
-   );
+    return next(new ErrorHandler("You already have one active auction.", 400));
   }
   try {
     const cloudinaryResponse = await cloudinary.uploader.upload(
