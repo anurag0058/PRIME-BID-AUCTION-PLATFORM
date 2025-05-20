@@ -232,7 +232,7 @@ const SignUp = () => {
           </form>
         </div>
       </section>
-    </>
+    </> 
   );
 };
 
