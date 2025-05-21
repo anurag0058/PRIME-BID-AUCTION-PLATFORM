@@ -14,6 +14,7 @@ import About from "./pages/About";
 import { getAllAuctionItems } from "./store/slices/auctionSlice";
 import Leaderboard from "./pages/Leaderboard";
 import Auctions from "./pages/Auctions";
+import AuctionItem from "./pages/AuctionItem";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
         <Route path="/auctions" element={<Auctions />} />
+        <Route path="/auction/item/:id" element={<AuctionItem />} />
 
       </Routes>
       <ToastContainer position="top-right" />

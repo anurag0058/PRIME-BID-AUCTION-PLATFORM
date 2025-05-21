@@ -13,15 +13,15 @@ const auctionSlice = createSlice({
     allAuctions: [],
   },
   reducers: {
-    // createAuctionRequest(state, action) {
-    //   state.loading = true;
-    // },
-    // createAuctionSuccess(state, action) {
-    //   state.loading = false;
-    // },
-    // createAuctionFailed(state, action) {
-    //   state.loading = false;
-    // },
+    createAuctionRequest(state, action) {
+      state.loading = true;
+    },
+    createAuctionSuccess(state, action) {
+      state.loading = false;
+    },
+    createAuctionFailed(state, action) {
+      state.loading = false;
+    },
     getAllAuctionItemRequest(state, action) {
       state.loading = true;
     },
@@ -32,19 +32,19 @@ const auctionSlice = createSlice({
     getAllAuctionItemFailed(state, action) {
       state.loading = false;
     },
-    // getAuctionDetailRequest(state, action) {
-    //   state.loading = true;
-    // },
-    // getAuctionDetailSuccess(state, action) {
-    //   state.loading = false;
-    //   state.auctionDetail = action.payload.auctionItem;
-    //   state.auctionBidders = action.payload.bidders;
-    // },
-    // getAuctionDetailFailed(state, action) {
-    //   state.loading = false;
-    //   state.auctionDetail = state.auctionDetail;
-    //   state.auctionBidders = state.auctionBidders;
-    // },
+    getAuctionDetailRequest(state, action) {
+      state.loading = true;
+    },
+    getAuctionDetailSuccess(state, action) {
+      state.loading = false;
+      state.auctionDetail = action.payload.auctionItem;
+      state.auctionBidders = action.payload.bidders;
+    },
+    getAuctionDetailFailed(state, action) {
+      state.loading = false;
+      state.auctionDetail = state.auctionDetail;
+      state.auctionBidders = state.auctionBidders;
+    },
     // getMyAuctionsRequest(state, action) {
     //   state.loading = true;
     //   state.myAuctions = [];
@@ -120,43 +120,43 @@ export const getAllAuctionItems = () => async (dispatch) => {
 //   }
 // };
 
-// export const getAuctionDetail = (id) => async (dispatch) => {
-//   dispatch(auctionSlice.actions.getAuctionDetailRequest());
-//   try {
-//     const response = await axios.get(
-//       `http://localhost:5000/api/v1/auctionitem/auction/${id}`,
-//       { withCredentials: true }
-//     );
-//     dispatch(auctionSlice.actions.getAuctionDetailSuccess(response.data));
-//     dispatch(auctionSlice.actions.resetSlice());
-//   } catch (error) {
-//     dispatch(auctionSlice.actions.getAuctionDetailFailed());
-//     console.error(error);
-//     dispatch(auctionSlice.actions.resetSlice());
-//   }
-// };
+export const getAuctionDetail = (id) => async (dispatch) => {
+  dispatch(auctionSlice.actions.getAuctionDetailRequest());
+  try {
+    const response = await axios.get(
+      `http://localhost:5000/api/v1/auctionitem/auction/${id}`,
+      { withCredentials: true }
+    );
+    dispatch(auctionSlice.actions.getAuctionDetailSuccess(response.data));
+    dispatch(auctionSlice.actions.resetSlice());
+  } catch (error) {
+    dispatch(auctionSlice.actions.getAuctionDetailFailed());
+    console.error(error);
+    dispatch(auctionSlice.actions.resetSlice());
+  }
+};
 
-// export const createAuction = (data) => async (dispatch) => {
-//   dispatch(auctionSlice.actions.createAuctionRequest());
-//   try {
-//     const response = await axios.post(
-//       "http://localhost:5000/api/v1/auctionitem/create",
-//       data,
-//       {
-//         withCredentials: true,
-//         headers: { "Content-Type": "multipart/form-data" },
-//       }
-//     );
-//     dispatch(auctionSlice.actions.createAuctionSuccess());
-//     toast.success(response.data.message);
-//     dispatch(getAllAuctionItems());
-//     dispatch(auctionSlice.actions.resetSlice());
-//   } catch (error) {
-//     dispatch(auctionSlice.actions.createAuctionFailed());
-//     toast.error(error.response.data.message);
-//     dispatch(auctionSlice.actions.resetSlice());
-//   }
-// };
+export const createAuction = (data) => async (dispatch) => {
+  dispatch(auctionSlice.actions.createAuctionRequest());
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/api/v1/auctionitem/create",
+      data,
+      {
+        withCredentials: true,
+        headers: { "Content-Type": "multipart/form-data" },
+      }
+    );
+    dispatch(auctionSlice.actions.createAuctionSuccess());
+    toast.success(response.data.message);
+    dispatch(getAllAuctionItems());
+    dispatch(auctionSlice.actions.resetSlice());
+  } catch (error) {
+    dispatch(auctionSlice.actions.createAuctionFailed());
+    toast.error(error.response.data.message);
+    dispatch(auctionSlice.actions.resetSlice());
+  }
+};
 
 // export const republishAuction = (id, data) => async (dispatch) => {
 //   dispatch(auctionSlice.actions.republishItemRequest());
