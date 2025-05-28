@@ -96,7 +96,7 @@ const UserProfile = () => {
                   </div>
                 </div>
               </div>
-
+             
               {user.role === "Auctioneer" && (
                 <div className="mb-6 w-full">
                   <h3 className="text-xl font-semibold mb-4">
@@ -142,12 +142,12 @@ const UserProfile = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700">
-                        Easypaisa Account Number
+                        Phonepe Account Number
                       </label>
                       <input
                         type="text"
                         defaultValue={
-                          user.paymentMethods.easypaisa.easypaisaAccountNumber
+                          user.paymentMethods.Phonepe.PhonepeAccountNumber
                         }
                         className="w-ful mt-1 p-2 border-gray-300 rounded-md focus:outline-none"
                         disabled
