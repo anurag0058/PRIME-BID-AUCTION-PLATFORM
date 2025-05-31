@@ -62,10 +62,10 @@ export const placeBid = catchAsyncErrors(async (req, res, next) => {
 
     res.status(201).json({
       success: true,
-      message: "Bid placed successfully.",
+      message: "Bid placed.",
       currentBid: auctionItem.currentBid,
     });
   } catch (error) {
-    return next(new ErrorHandler(error.message || "Failed to place bid", 500));
+    return next(new ErrorHandler(error.message || "Failed to place bid.", 500));
   }
 });
