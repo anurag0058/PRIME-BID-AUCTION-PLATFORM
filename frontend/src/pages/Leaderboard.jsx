@@ -30,6 +30,7 @@ const Leaderboard = () => {
                 </thead>
                 <tbody className="text-gray-700">
                   {leaderboard.slice(0, 100).map((element, index) => {
+                    
                     return (
                       <tr
                         key={element._id}
@@ -50,6 +51,7 @@ const Leaderboard = () => {
                         <td className="py-2 px-4">{element.userName}</td>
                         <td className="py-2 px-4">{element.moneySpent}</td>
                         <td className="py-2 px-4">{element.auctionsWon}</td>
+                       
                       </tr>
                     );
                   })}
