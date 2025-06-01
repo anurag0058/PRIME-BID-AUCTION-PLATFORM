@@ -58,9 +58,7 @@ The Super Admin oversees all auction activities and user interactions.
 
 ## 🌐 Live Demo
 
-*Coming Soon...*  
-(*Or add your deployment link here if hosted on Netlify, Vercel, Render, etc.*)
-
+Link:-https://mern-stack-platform.netlify.app/
 ---
 
 ## 🛠️ Installation & Setup
