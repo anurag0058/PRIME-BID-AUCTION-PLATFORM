@@ -70,6 +70,7 @@ The Super Admin oversees all auction activities and user interactions.
 - MongoDB (local or Atlas cloud)
 - Git
 
+
 ### 📦 Steps to Run:
 
 ```bash
@@ -86,3 +87,5 @@ npm install
 # Install frontend dependencies
 cd ../client
 npm install
+
+
