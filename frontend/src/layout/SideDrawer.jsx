@@ -183,7 +183,7 @@ const SideDrawer = () => {
           </Link>
           <p className="text-stone-500">&copy; PrimeBid, LLC.</p>
           <p className="text-stone-500">
-            Degined By{" "}
+            Designed By{" "}
             <Link
               to={"/"}
               className="font-semibold hover:text-[#d6482b] hover:transition-all hover:duration-150"
